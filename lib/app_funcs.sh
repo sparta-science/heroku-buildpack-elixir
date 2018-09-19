@@ -76,6 +76,7 @@ function app_dependencies() {
 
   cd $build_path
   output_section "Fetching app dependencies with mix"
+  mix hex.organization auth sparta --key $HEX_PM_SPARTA_ORG
   mix deps.get --only $MIX_ENV || exit 1
 
   export GIT_DIR=$git_dir_value
